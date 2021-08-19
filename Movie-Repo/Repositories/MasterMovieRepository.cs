@@ -37,10 +37,16 @@ namespace Movie_Repo.Repositories
         {
             var commandStr = string.Format(@"INSERT INTO [dbo].[MasterMovie]
                                                                ([Title]
-                                                               ,[ImgLink])
+                                                               ,[ImgLink]
+                                                               ,[Time]
+                                                               ,[Date]
+                                                               ,[Type])
                                                                VALUES
                                                                (@Title
-                                                               ,@ImgLink)");
+                                                               ,@ImgLink
+                                                               ,@Time
+                                                               ,@Date
+                                                               ,@Type)");
             return _db.Execute(commandStr, MappingParameter(tModel));
         }
 
@@ -57,6 +63,9 @@ namespace Movie_Repo.Repositories
             var commanStr = string.Format(@"UPDATE [dbo].[MasterMovie]
                                                     SET[Title] = @Title
                                                     ,[ImgLink] = @ImgLink
+                                                    ,[Time] = @Time
+                                                    ,[Date] = @Date
+                                                    ,[Type] = @Type
                                                     WHERE [Id] = @Id ");
             return _db.Execute(commanStr, MappingParameter(tModel));
         }
@@ -68,7 +77,10 @@ namespace Movie_Repo.Repositories
             {
                 Id = tModel.Id,
                 Title = tModel.Title,
-                ImgLink = tModel.ImgLink
+                ImgLink = tModel.ImgLink,
+                Time = tModel.Time,
+                Date = tModel.Date,
+                Type = tModel.Type
             };
         }
     }
