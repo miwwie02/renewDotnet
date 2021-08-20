@@ -17,6 +17,6 @@ namespace Movie_Repo.Models
 
         public string Date { get; set; }
 
-        public string Type { get; set; }
+        public int Fk_TypeId { get; set; }
     }
 }

@@ -49,7 +49,7 @@ namespace Movie_Repo.Services
             masterMovie.ImgLink = model.ImgLink;
             masterMovie.Time = model.Time;
             masterMovie.Date = model.Date;
-            masterMovie.Type = model.Type;
+            masterMovie.Fk_TypeId = model.Fk_TypeId;
             return masterMovieRepository.Update(masterMovie) > 0;
         }
 

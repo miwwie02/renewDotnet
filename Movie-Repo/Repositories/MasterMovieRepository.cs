@@ -40,13 +40,13 @@ namespace Movie_Repo.Repositories
                                                                ,[ImgLink]
                                                                ,[Time]
                                                                ,[Date]
-                                                               ,[Type])
+                                                               ,[Fk_TypeId])
                                                                VALUES
                                                                (@Title
                                                                ,@ImgLink
                                                                ,@Time
                                                                ,@Date
-                                                               ,@Type)");
+                                                               ,@Fk_TypeId)");
             return _db.Execute(commandStr, MappingParameter(tModel));
         }
 
@@ -65,7 +65,7 @@ namespace Movie_Repo.Repositories
                                                     ,[ImgLink] = @ImgLink
                                                     ,[Time] = @Time
                                                     ,[Date] = @Date
-                                                    ,[Type] = @Type
+                                                    ,[Fk_TypeId] = @Fk_TypeId
                                                     WHERE [Id] = @Id ");
             return _db.Execute(commanStr, MappingParameter(tModel));
         }
@@ -80,7 +80,7 @@ namespace Movie_Repo.Repositories
                 ImgLink = tModel.ImgLink,
                 Time = tModel.Time,
                 Date = tModel.Date,
-                Type = tModel.Type
+                Fk_TypeId = tModel.Fk_TypeId
             };
         }
     }
